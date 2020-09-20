@@ -25,4 +25,10 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('users/{id}', 'UserController@singleUser');
     $router->get('users', 'UserController@allUsers');
 
+    $router->get('/listing/{id}', 'ListingController@index');
+    $router->post('/listing/create', 'ListingController@store');
+    $router->get('/listing/show/{id}', 'ListingController@show');
+    $router->put('/listing/update/{id}', 'ListingController@update');
+    $router->delete('/listing/delete/{id}', 'ListingController@destroy');
+
 });
